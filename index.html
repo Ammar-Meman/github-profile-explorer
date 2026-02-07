@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub User Finder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Header -->
+  <div class="header">
+    <div class="header-left">
+      <h1 class="app-title">GitHub User Finder</h1>
+      <span class="last-searched"></span>
+    </div>
+    <button class="theme-toggle">Toggle Theme</button>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container"></div>
+
+  <!-- Main Container -->
+  <div class="container">
+
+    <!-- Welcome Banner -->
+    <div class="welcome-banner hidden">
+      <button class="close-banner">×</button>
+      <h2>Welcome to GitHub User Finder!</h2>
+      <p>Search for any GitHub user to view their profile, repositories, and more. Use the search history dropdown to
+        quickly access previously searched users. Toggle between light and dark themes using the button in the header.
+      </p>
+    </div>
+
+    <!-- Search Section -->
+    <div class="search-section">
+      <div class="search-box">
+        <input type="text" class="search-input" placeholder="Enter GitHub Username">
+        <button class="btn">Search</button>
+      </div>
+
+      <div class="search-history-container">
+        <label class="search-history-label">Search History (Last 5 users):</label>
+        <select class="search-history">
+          <option value="">-- Select from history --</option>
+        </select>
+      </div>
+    </div>
+
+    <p class="message"></p>
+
+    <!-- Profile Container -->
+    <div class="containerProfile">
+      <div class="cardLeft"></div>
+      <div class="cardRight"></div>
+    </div>
+
+    <!-- Tabs Container -->
+    <div class="tabs-container hidden">
+      <div class="tabs">
+        <button class="tab active" data-tab="repositories">Repositories</button>
+        <button class="tab" data-tab="pinned">Pinned Repos</button>
+        <button class="tab" data-tab="gists">Gists</button>
+      </div>
+
+      <div class="tab-content active" id="repositories">
+        <div class="repo-list"></div>
+        <div class="pagination">
+          <button class="prev-btn">Previous</button>
+          <span class="page-info">Page 1</span>
+          <button class="next-btn">Next</button>
+        </div>
+      </div>
+
+      <div class="tab-content" id="pinned">
+        <div class="pinned-list"></div>
+      </div>
+
+      <div class="tab-content" id="gists">
+        <div class="gists-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+
+</html>
